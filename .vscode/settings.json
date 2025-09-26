@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "compare": "cpp",
+        "cstdint": "cpp"
+    },
+    "cmake.sourceDirectory": "/workspaces/oop_mai/1"
+}
