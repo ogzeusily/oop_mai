@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
-#include "../include/decimal.h"
-#include "../include/vector.h"
+#include "decimal.h"
+#include "vector.h"
+#include <stdexcept>
 
 
 TEST(VectorTest, BasicOperations) {
@@ -10,9 +11,9 @@ TEST(VectorTest, BasicOperations) {
     v1.PushBack(5);
     v1.PushBack(7);
     EXPECT_EQ(v1.Size(), 3u);
-    EXPECT_EQ(v1[0], 3);
-    EXPECT_EQ(v1[1], 5);
-    EXPECT_EQ(v1[2], 7);
+    EXPECT_EQ(v1.Data()[0], 3);
+    EXPECT_EQ(v1.Data()[1], 5);
+    EXPECT_EQ(v1.Data()[2], 7);
     v1.PopBack();
     EXPECT_EQ(v1.Size(), 2u);
     v1.Clear();
@@ -25,36 +26,31 @@ TEST(VectorTest, CopyAndAssign) {
     v1.PushBack(2);
     Vector v2 = v1;
     EXPECT_EQ(v2.Size(), 2u);
-    EXPECT_EQ(v2[0], 1);
-    EXPECT_EQ(v2[1], 2);
-    Vector v3;
-    v3 = v1;
-    EXPECT_EQ(v3.Size(), 2u);
-    EXPECT_EQ(v3[0], 1);
-    EXPECT_EQ(v3[1], 2);
+    EXPECT_EQ(v2.Data()[0], 1);
+    EXPECT_EQ(v2.Data()[1], 2);
 }
 
 TEST(VectorTest, InitializerList) {
     Vector v1 = {1, 2, 3};
     EXPECT_EQ(v1.Size(), 3u);
-    EXPECT_EQ(v1[0], 1);
-    EXPECT_EQ(v1[1], 2);
-    EXPECT_EQ(v1[2], 3);
+    EXPECT_EQ(v1.Data()[0], 1);
+    EXPECT_EQ(v1.Data()[1], 2);
+    EXPECT_EQ(v1.Data()[2], 3);
     Vector v2{4, 5};
     EXPECT_EQ(v2.Size(), 2u);
-    EXPECT_EQ(v2[0], 4);
-    EXPECT_EQ(v2[1], 5);
+    EXPECT_EQ(v2.Data()[0], 4);
+    EXPECT_EQ(v2.Data()[1], 5);
     Vector v3({1, 2});
     EXPECT_EQ(v3.Size(), 2u);
-    EXPECT_EQ(v3[0], 1);
-    EXPECT_EQ(v3[1], 2);
+    EXPECT_EQ(v3.Data()[0], 1);
+    EXPECT_EQ(v3.Data()[1], 2);
 }
 
 TEST(VectorTest, ConstructorWithValue) {
     Vector v(5, 10);
     EXPECT_EQ(v.Size(), 5u);
     for (size_t i = 0; i < v.Size(); ++i) {
-        EXPECT_EQ(v[i], 10);
+        EXPECT_EQ(v.Data()[i], 10);
     }
 }
 
@@ -65,15 +61,8 @@ TEST(VectorTest, MoveOperations) {
     v1.PushBack(3);
     Vector v2 = std::move(v1);
     EXPECT_EQ(v2.Size(), 3u);
-    EXPECT_EQ(v2[0], 1);
+    EXPECT_EQ(v2.Data()[0], 1);
     EXPECT_TRUE(v1.IsEmpty());
-
-    Vector v3;
-    v3.PushBack(4);
-    v3 = std::move(v2);
-    EXPECT_EQ(v3.Size(), 3u);
-    EXPECT_EQ(v3[0], 1);
-    EXPECT_TRUE(v2.IsEmpty());
 }
 
 TEST(VectorTest, Accessors) {
@@ -101,14 +90,14 @@ TEST(VectorTest, Modifiers) {
     Vector v = {1, 2, 3, 4, 5};
     v.Insert(2, 99);
     EXPECT_EQ(v.Size(), 6u);
-    EXPECT_EQ(v[2], 99);
-    EXPECT_EQ(v[3], 3);
+    EXPECT_EQ(v.Data()[2], 99);
+    EXPECT_EQ(v.Data()[3], 3);
 
     v.Erase(1, 3);
     EXPECT_EQ(v.Size(), 4u);
-    EXPECT_EQ(v[0], 1);
-    EXPECT_EQ(v[1], 3);
-    EXPECT_EQ(v[2], 4);
+    EXPECT_EQ(v.Data()[0], 1);
+    EXPECT_EQ(v.Data()[1], 3);
+    EXPECT_EQ(v.Data()[2], 4);
 
     v.Resize(10, 7);
     EXPECT_EQ(v.Size(), 10u);
@@ -130,12 +119,12 @@ TEST(DecimalTest, ConstructAndPrint) {
 TEST(DecimalTest, Add) {
     Decimal d1("123");
     Decimal d2("456");
-    Decimal sum = d1.add(d2);
+    Decimal sum = Decimal::add(d1, d2);
     Decimal expected("579");
     EXPECT_TRUE(sum.equals(expected));
     Decimal d3("13");
     Decimal d4("100000000000000");
-    Decimal sum1 = d3.add(d4);
+    Decimal sum1 = Decimal::add(d3, d4);
     Decimal expected1("100000000000013");
     EXPECT_TRUE(sum1.equals(expected1));
 }
@@ -143,13 +132,13 @@ TEST(DecimalTest, Add) {
 TEST(DecimalTest, Subtract) {
     Decimal d1("1000");
     Decimal d2("1");
-    Decimal diff = d1.subtract(d2);
+    Decimal diff = Decimal::subtract(d1, d2);
     Decimal expected("999");
     EXPECT_TRUE(diff.equals(expected));
 
     Decimal d3("63");
     Decimal d4("19");
-    Decimal diff1 = d3.subtract(d4);
+    Decimal diff1 = Decimal::subtract(d3, d4);
     Decimal expected1("44");
     EXPECT_TRUE(diff1.equals(expected1));
 }
@@ -174,7 +163,7 @@ TEST(DecimalTest, Compare) {
 TEST(DecimalTest, SubtractThrowsIfNegative) {
     Decimal d1("5");
     Decimal d2("10");
-    EXPECT_THROW(d1.subtract(d2), std::invalid_argument);
+    EXPECT_THROW(Decimal::subtract(d1, d2), std::invalid_argument);
 }
 
 int main(int argc, char **argv) {

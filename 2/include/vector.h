@@ -8,12 +8,8 @@ public:
     Vector();
     Vector(size_t count, const unsigned char& value);
     Vector(const Vector& other);
-    Vector& operator=(const Vector& other);
     Vector(Vector&& other) noexcept;
-    Vector& operator=(Vector&& other);
     Vector(std::initializer_list<unsigned char> init);
-    unsigned char& operator[](size_t pos);
-    const unsigned char& operator[](size_t pos) const;
     unsigned char& Front() const noexcept;
     unsigned char& Back() const noexcept;
     unsigned char* Data() const noexcept;

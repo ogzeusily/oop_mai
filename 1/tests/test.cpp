@@ -2,7 +2,7 @@
 #include "separator.h"
 
 TEST(SeparatorTest, PositiveNumbers) {
-    EXPECT_EQ(10, separator(10, 2));  // оба положительные → 10
+    EXPECT_EQ(10, separator(10, 2));
 }
 
 TEST(SeparatorTest, NegativeNumbers) {
@@ -38,7 +38,7 @@ TEST(SeparatorTest, EdgeCases_NegativeFirst) {
 }
 
 TEST(SeparatorTest, LargeNumbers) {
-    EXPECT_EQ(3000000, separator(1000000, 2000002));  // оба положительные → 0
+    EXPECT_EQ(3000000, separator(1000000, 2000002));
 }
 
 int main(int argc, char **argv) {

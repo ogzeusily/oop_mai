@@ -44,37 +44,6 @@ Vector::Vector(const Vector& other)
 }
 
 
-
-
-
-Vector& Vector::operator=(const Vector& other) {
-    if (this != &other) {
-        Vector tmp(other);
-        std::swap(sz_, tmp.sz_);
-        std::swap(cap_, tmp.cap_);
-        std::swap(arr_, tmp.arr_);
-        std::swap(alloc_, tmp.alloc_);
-    }
-    return *this;
-}
-
-
-Vector& Vector::operator=(Vector&& other) {
-    if (this != &other) {
-        Clear();
-        alloc_.deallocate(arr_, cap_);
-        sz_ = other.sz_;
-        cap_ = other.cap_;
-        arr_ = other.arr_;
-        alloc_ = std::move(other.alloc_);
-        other.arr_ = nullptr;
-        other.sz_ = 0;
-        other.cap_ = 0;
-    }
-    return *this;
-}
-
-
 Vector::Vector(Vector&& other) noexcept
     : alloc_(std::move(other.alloc_)), sz_(other.sz_), cap_(other.cap_), arr_(other.arr_) {
     other.arr_ = nullptr;
@@ -99,17 +68,6 @@ Vector::Vector(std::initializer_list<unsigned char> init)
         throw;
     }
 }
-
-
-
-unsigned char& Vector::operator[](size_t pos) {
-    return arr_[pos];
-}
-
-const unsigned char& Vector::operator[](size_t pos) const {
-    return arr_[pos];
-}
-
 
 unsigned char& Vector::Front() const noexcept {
     return arr_[0];
@@ -236,7 +194,6 @@ void Vector::PopBack() {
     std::allocator_traits<decltype(alloc_)>::destroy(alloc_, arr_ + sz_);
 }
 
-
 void Vector::Resize(size_t count, const unsigned char& value) {
     if (count > cap_) {
         Reserve(count);
@@ -253,7 +210,6 @@ void Vector::Resize(size_t count, const unsigned char& value) {
     }
     sz_ = count;
 }
-
 
 Vector::~Vector() {
     for (size_t i = 0; i < sz_; ++i) {
