@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblab_lib.a CMakeFiles/lab_lib.dir/src/figure.cpp.o CMakeFiles/lab_lib.dir/src/vector.cpp.o CMakeFiles/lab_lib.dir/src/triangle.cpp.o CMakeFiles/lab_lib.dir/src/rectangle.cpp.o CMakeFiles/lab_lib.dir/src/kvadrat.cpp.o
+/usr/bin/ranlib liblab_lib.a
