@@ -5,6 +5,7 @@
 #include "kvadrat.h"
 #include <stdexcept>
 
+// commit for pr
 TEST(VectorTest, BasicOperations) {
     Vector v;
     EXPECT_TRUE(v.IsEmpty());

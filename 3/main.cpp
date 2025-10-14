@@ -5,6 +5,7 @@
 #include "rectangle.h"
 #include "kvadrat.h"
 
+// commit for pr
 int main() {
     Vector figures;
     

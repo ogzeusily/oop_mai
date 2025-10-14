@@ -2,6 +2,7 @@
 #include "figure.h"
 #include "point.h"
 
+// commit for pr
 class Rectangle : public Figure {
 public:
     Rectangle() = delete;

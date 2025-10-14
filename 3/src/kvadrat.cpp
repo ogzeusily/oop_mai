@@ -3,6 +3,7 @@
 #include <algorithm>
 
 
+// commit for pr
 Kvadrat::Kvadrat(const Point& p1, const Point& p2, const Point& p3, const Point& p4) 
     : Rectangle(p1, p2, p3, p4) {}
 

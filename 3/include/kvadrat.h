@@ -1,6 +1,7 @@
 #pragma once
 #include "rectangle.h"
 
+// commit for pr
 class Kvadrat : public Rectangle {
 public:
     Kvadrat() = delete;

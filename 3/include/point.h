@@ -3,6 +3,7 @@
 #include <iostream>
 #include <cmath>
 
+// commit for pr
 class Point {
 public:
     Point() : x(0), y(0) {}
