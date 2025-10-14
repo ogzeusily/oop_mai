@@ -9,38 +9,17 @@ public:
     Point() : x(0), y(0) {}
     Point(double x, double y) : x(x), y(y) {}
     
-    Point(const Point& other) : x(other.x), y(other.y) {}
+    Point(const Point& other) = default;
     
-    Point(Point&& other) noexcept : x(other.x), y(other.y) {
-        other.x = 0;
-        other.y = 0;
-    }
+    Point(Point&& other) = default;
     
-    Point& operator=(const Point& other) {
-        if (this != &other) {
-            x = other.x;
-            y = other.y;
-        }
-        return *this;
-    }
+    Point& operator=(const Point& other) = default;
     
-    Point& operator=(Point&& other) noexcept {
-        if (this != &other) {
-            x = other.x;
-            y = other.y;
-            other.x = 0;
-            other.y = 0;
-        }
-        return *this;
-    }
+    Point& operator=(Point&& other) noexcept = default;
     
-    bool operator==(const Point& other) const {
-        return x == other.x && y == other.y;
-    }
+    bool operator==(const Point& other) const = default;
     
-    bool operator!=(const Point& other) const {
-        return !(*this == other);
-    }
+    bool operator!=(const Point& other) const = default;
     
     double getX() const { return x; }
     double getY() const { return y; }
