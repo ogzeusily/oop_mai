@@ -7,32 +7,13 @@
 Kvadrat::Kvadrat(const Point& p1, const Point& p2, const Point& p3, const Point& p4) 
     : p1(p1), p2(p2), p3(p3), p4(p4) {}
 
-Kvadrat::Kvadrat(const Kvadrat& other)
-    : p1(other.p1), p2(other.p2), p3(other.p3), p4(other.p4) {}
+Kvadrat::Kvadrat(const Kvadrat& other) = default;
 
-Kvadrat::Kvadrat(Kvadrat&& other) noexcept
-    : p1(std::move(other.p1)), p2(std::move(other.p2)), 
-      p3(std::move(other.p3)), p4(std::move(other.p4)) {}
+Kvadrat::Kvadrat(Kvadrat&& other) noexcept = default;
 
-Kvadrat& Kvadrat::operator=(const Kvadrat& other) {
-    if (this != &other) {
-        p1 = other.p1;
-        p2 = other.p2;
-        p3 = other.p3;
-        p4 = other.p4;
-    }
-    return *this;
-}
+Kvadrat& Kvadrat::operator=(const Kvadrat& other) = default;
 
-Kvadrat& Kvadrat::operator=(Kvadrat&& other) noexcept {
-    if (this != &other) {
-        p1 = std::move(other.p1);
-        p2 = std::move(other.p2);
-        p3 = std::move(other.p3);
-        p4 = std::move(other.p4);
-    }
-    return *this;
-}
+Kvadrat& Kvadrat::operator=(Kvadrat&& other) noexcept = default;
 
 bool Kvadrat::operator==(const Kvadrat& other) const {
     return p1 == other.p1 && p2 == other.p2 && 
