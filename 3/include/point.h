@@ -6,7 +6,7 @@
 // commit for pr
 class Point {
 public:
-    Point() : x(0), y(0) {}
+    Point() = default;
     Point(double x, double y) : x(x), y(y) {}
     
     Point(const Point& other) = default;
