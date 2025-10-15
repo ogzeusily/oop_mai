@@ -4,6 +4,7 @@
 #include <initializer_list>
 #include "figure.h"
 
+// commit for pr
 class Vector {
 public:
     Vector();

@@ -1,3 +1,3 @@
 #include "figure.h"
 
-Figure::~Figure() = default;
+Figure::~Figure() = default; //
