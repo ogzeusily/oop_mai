@@ -47,5 +47,9 @@ private:
 
 }  // namespace geometry
 
+<<<<<<< HEAD
 #include "hexagon.ipp"
+=======
+#include "../src/hexagon.ipp"
+>>>>>>> 6065f19 (add lab4)
 

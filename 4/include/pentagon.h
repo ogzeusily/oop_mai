@@ -47,5 +47,9 @@ private:
 
 }  // namespace geometry
 
+<<<<<<< HEAD
 #include "pentagon.ipp"
+=======
+#include "../src/pentagon.ipp"
+>>>>>>> 6065f19 (add lab4)
 
