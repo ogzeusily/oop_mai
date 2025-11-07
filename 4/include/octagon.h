@@ -47,5 +47,5 @@ private:
 
 }  // namespace geometry
 
-#include "../src/octagon.ipp"
+#include "octagon.ipp"
 

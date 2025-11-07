@@ -47,5 +47,5 @@ private:
 
 }  // namespace geometry
 
-#include "../src/pentagon.ipp"
+#include "pentagon.ipp"
 

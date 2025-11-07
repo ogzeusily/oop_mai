@@ -47,5 +47,5 @@ private:
 
 }  // namespace geometry
 
-#include "../src/hexagon.ipp"
+#include "hexagon.ipp"
 
