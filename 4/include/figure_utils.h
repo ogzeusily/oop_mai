@@ -17,8 +17,4 @@ void print_figures(const containers::Vector<std::shared_ptr<Figure<T>>>& figures
 
 }  // namespace geometry
 
-<<<<<<< HEAD
 #include "figure_utils.ipp"
-=======
-#include "../src/figure_utils.ipp"
->>>>>>> 6065f19 (add lab4)

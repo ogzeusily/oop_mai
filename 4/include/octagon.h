@@ -47,9 +47,5 @@ private:
 
 }  // namespace geometry
 
-<<<<<<< HEAD
 #include "octagon.ipp"
-=======
-#include "../src/octagon.ipp"
->>>>>>> 6065f19 (add lab4)
 

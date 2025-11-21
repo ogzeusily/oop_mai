@@ -41,8 +41,4 @@ private:
 
 }  // namespace geometry
 
-<<<<<<< HEAD
 #include "point.ipp"
-=======
-#include "../src/point.ipp"
->>>>>>> 6065f19 (add lab4)
