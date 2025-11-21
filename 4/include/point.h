@@ -41,4 +41,4 @@ private:
 
 }  // namespace geometry
 
-#include "../src/point.ipp"
+#include "point.ipp"
