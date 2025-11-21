@@ -19,14 +19,17 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-add_library(lab_lib INTERFACE)
-target_include_directories(lab_lib INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include ${CMAKE_CURRENT_SOURCE_DIR}/src)
+include_directories(include)
+add_library(lab_lib 
+    src/memory_resourse.cpp
+    src/queue.cpp
+)
 
 add_executable(main main.cpp)
-target_link_libraries(main PRIVATE lab_lib)
+target_link_libraries(main lab_lib)
 
 
 enable_testing()
 add_executable(lab_tests tests/test.cpp)
-target_link_libraries(lab_tests PRIVATE lab_lib gtest_main)
+target_link_libraries(lab_tests lab_lib gtest_main)
 add_test(NAME lab_tests COMMAND lab_tests)

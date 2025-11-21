@@ -44,5 +44,6 @@ public:
     }
 
 private:
-    double x, y;
+    double x = 0;
+    double y = 0;
 };
