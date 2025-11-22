@@ -2,6 +2,7 @@
 
 #include <cstdint>
 
+//
 MemoryResource::MemoryResource(size_t pool_size): pool_size_(pool_size), pool_(new int8_t[pool_size]) {
 }
 
