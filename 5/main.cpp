@@ -4,7 +4,6 @@
 #include "queue.h"
 #include "memory_resourse.h"
 
-
 int main() {
     MemoryResource mem_res;
     Queue<int> q_int(&mem_res);

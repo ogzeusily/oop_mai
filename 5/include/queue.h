@@ -9,6 +9,7 @@
 
 #include "exceptions.h"
 
+
 template <typename T>
 class Queue {
 private:
