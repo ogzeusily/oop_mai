@@ -1,5 +1,6 @@
 #include "queue.h"
 
+
 template <typename T>
 Queue<T>::Queue(std::pmr::memory_resource* res)
     : alloc_(res), head_(nullptr), tail_(nullptr), sz_(0) {}

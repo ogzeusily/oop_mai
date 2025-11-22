@@ -4,6 +4,7 @@
 #include "queue.h"
 #include "memory_resourse.h"
 
+
 TEST(QueueTest, IntBasicOperations) {
     MemoryResource mem_res;
     Queue<int> q(&mem_res);
