@@ -3,6 +3,7 @@
 #include <algorithm>
 
 
+// commit for pr
 Rectangle::Rectangle(const Point& p1, const Point& p2, const Point& p3, const Point& p4) 
     : p1(p1), p2(p2), p3(p3), p4(p4) {}
 
