@@ -1,1 +1,0 @@
-/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/main.dir/main.cpp.o CMakeFiles/main.dir/src/point.cpp.o CMakeFiles/main.dir/src/npc.cpp.o CMakeFiles/main.dir/src/visitor.cpp.o CMakeFiles/main.dir/src/observer.cpp.o CMakeFiles/main.dir/src/factory.cpp.o CMakeFiles/main.dir/src/dungeon.cpp.o -o main

@@ -1,2 +1,0 @@
-TestElf (Elf) killed TestRogue (Rogue)
-Misha (Bear) killed Legolas (Elf)
