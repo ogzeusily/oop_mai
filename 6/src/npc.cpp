@@ -43,12 +43,9 @@ void Bear::Accept(BattleVisitor& visitor) {
 }
 
 bool Bear::Kill(NPCType killer_type) {
-    // Медведь может быть убит только медведем (то есть не может быть убит)
-    // Медведь убивает эльфов, но это проверяется на стороне атакующего
     return false;
 }
 
-// Elf implementation
 Elf::Elf(const std::string& name, const Point& position)
     : NPC(name, position, NPCType::ELF) {}
 
@@ -57,7 +54,6 @@ void Elf::Accept(BattleVisitor& visitor) {
 }
 
 bool Elf::Kill(NPCType killer_type) {
-    // Эльф может быть убит медведем
     if (killer_type == NPCType::BEAR) {
         alive_ = false;
         return true;
@@ -65,7 +61,6 @@ bool Elf::Kill(NPCType killer_type) {
     return false;
 }
 
-// Rogue implementation
 Rogue::Rogue(const std::string& name, const Point& position)
     : NPC(name, position, NPCType::ROGUE) {}
 
