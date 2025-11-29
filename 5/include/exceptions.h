@@ -3,6 +3,7 @@
 #include <exception>
 #include <string>
 
+
 class ListIsEmptyException: public std::exception {
 public:
     explicit ListIsEmptyException(const std::string& text) : error_message_(text) {

@@ -6,6 +6,7 @@
 
 #include "exceptions.h"
 
+
 namespace {
     inline const size_t POOLSIZE = 4096;
 }
