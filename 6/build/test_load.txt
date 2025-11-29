@@ -1,0 +1,2 @@
+Bear LoadBear 50 50
+Elf LoadElf 100 100

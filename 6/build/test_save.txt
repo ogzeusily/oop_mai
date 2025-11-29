@@ -1,0 +1,2 @@
+Bear SaveBear 50 50
+Elf SaveElf 100 100

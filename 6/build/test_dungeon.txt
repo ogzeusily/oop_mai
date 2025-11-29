@@ -1,0 +1,3 @@
+Bear Misha 50 50
+Elf Legolas 100 100
+Rogue Robin 150 150
