@@ -34,7 +34,6 @@ double NPC::Distance(const std::shared_ptr<NPC>& other) const {
     return position_.Distance(other->GetPosition());
 }
 
-// Bear implementation
 Bear::Bear(const std::string& name, const Point& position)
     : NPC(name, position, NPCType::BEAR) {}
 
