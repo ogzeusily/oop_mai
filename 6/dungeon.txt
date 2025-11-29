@@ -1,0 +1,6 @@
+Bear Brumal 100.0 150.0
+Elf Legolas 200.0 200.0
+Rogue Shadow 150.0 150.0
+Bear Grizzly 250.0 250.0
+Elf Arwen 300.0 100.0
+Rogue Blade 350.0 350.0
