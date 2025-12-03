@@ -40,8 +40,6 @@ TEST_F(DungeonTest, CreateRogue) {
     EXPECT_TRUE(rogue->IsAlive());
 }
 
-// ========== Movement Distance Tests ==========
-
 TEST_F(DungeonTest, BearMoveDistance) {
     auto bear = NPCFactory::CreateBear("Bear1", Point(10, 10));
     EXPECT_DOUBLE_EQ(bear->GetMoveDistance(), 5.0);
