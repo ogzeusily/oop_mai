@@ -1,0 +1,6 @@
+Bear Ursa 100 100
+Elf Arwen 200 150
+Rogue Hood 250 200
+Bear Baloo 300 300
+Elf Tauriel 350 350
+Rogue Prince 400 400
